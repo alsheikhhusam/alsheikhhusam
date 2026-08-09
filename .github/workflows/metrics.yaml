@@ -1,0 +1,33 @@
+name: Metrics
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          plugin_calendar: yes
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          plugin_achievements: yes
+          plugin_achievements_display: detailed
+          plugin_languages: yes
+          plugin_languages_limit: 8
+          plugin_languages_details: percentage
+          plugin_repositories: yes
+          plugin_repositories_order: featured
+          plugin_stars: yes
+          plugin_stars_limit: 5
+          plugin_followup: yes
+          plugin_habits: yes

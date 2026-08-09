@@ -25,10 +25,9 @@ jobs:
           plugin_languages: yes
           plugin_languages_limit: 8
           plugin_languages_details: percentage
+          plugin_repositories: yes
           plugin_repositories_order: featured
-          plugin_repositories: |
-            homelab
-            PortfolioProject
+          plugin_repositories_featured: alsheikhhusam/homelab, alsheikhhusam/PortfolioProject
           plugin_stars: yes
           plugin_stars_limit: 5
           plugin_followup: yes
